@@ -28,7 +28,9 @@ function App() {
   useEffect(() => {
     const getCountriesData = async () => {
       await fetch("https://disease.sh/v3/covid-19/countries").then((response) => response.json())
+      
         .then((data) => {
+          console.log(data);
           const countreis = data.map((country) => (
          
             {
@@ -36,9 +38,11 @@ function App() {
               value: country.countryInfo.iso2,
             
             }
+            
           ));
-          const sortedData = sortData(data)
+         
           setmapCounteries(data);
+          const sortedData = sortData(data);
           setTableData(sortedData);
           setCounteries(countreis);
       })
@@ -46,9 +50,10 @@ function App() {
     getCountriesData();
   },[])
 
+
   const onCountryChange = async (event) => {
     const countrycode = event.target.value;
-    
+ 
     const url = countrycode === 'worldwide' ? "https://disease.sh/v3/covid-19/all" : `https://disease.sh/v3/covid-19/countries/${countrycode}`
     
     await fetch(url)
@@ -62,6 +67,7 @@ function App() {
       });
 
   }
+  console.log("my map country",mapCounteries);
   console.log("this is country info",countryInfo);
 
   //useEffect = Run a pieace of coe based on given condition
