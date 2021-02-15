@@ -1,11 +1,12 @@
 import React from "react"
+import "./infobox.css";
 import {Card, CardContent, Typography} from "@material-ui/core"
      
 const InfoBox = (props) =>{
     return (
         <React.Fragment>
-        <Card>
-            <CardContent>
+        <Card className="Card">
+            <CardContent >
                 
                 <Typography className="infobox" color="textSecondary">{props.title}</Typography>
 

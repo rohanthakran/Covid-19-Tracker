@@ -77,7 +77,7 @@ function App() {
         
       <div className="app__header">
       
-      <h1>this is covid tracker</h1>
+      <h1 style={{paddingBottom:"10px"}} >Covid-19 Tracking</h1>
         <FormControl className="app__dropdown">
 
         <Select variant="outlined" onChange={onCountryChange} value ={country}>
@@ -115,7 +115,7 @@ function App() {
         <CardContent>
         <h3>Live Cases by Contry</h3>
         <Table counteries={tableData} />
-        <h3>WorldWide</h3>
+ 
         <LineGraph/>
         </CardContent>
       </Card>

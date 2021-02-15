@@ -32,4 +32,16 @@ body{
   .App{
     flex-direction: column
   }
+  .app__header{
+    flex-direction: column;
+  }
+  .MuiFormControl-root{
+    width: 100%;
+  }
+  .app__stats{
+    flex-direction: column;
+  }
+  .app__left{
+    margin-bottom: 1rem;
+  }
 }
